@@ -29,6 +29,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
+                                    <action selector="takePhoto:" destination="fuS-Rj-JID" eventType="touchUpInside" id="eaf-V9-W9l"/>
                                     <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iLh-48-8JL"/>
                                 </connections>
                             </button>
@@ -41,6 +42,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="fuS-Rj-JID" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="113" y="125"/>
         </scene>

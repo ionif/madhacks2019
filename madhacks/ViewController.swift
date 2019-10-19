@@ -9,8 +9,8 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+    
     @IBOutlet weak var cameraView: UIView!
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
@@ -67,8 +67,7 @@ class ViewController: UIViewController {
     
     @IBAction func takePhoto(_ sender: Any) {
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-        //stillImageOutput.capturePhoto(with: settings, delegate: self)
-        
+        stillImageOutput.capturePhoto(with: settings, delegate: self)
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
@@ -84,6 +83,5 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.captureSession.stopRunning()
     }
-    
 }
 
