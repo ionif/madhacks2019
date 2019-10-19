@@ -59,7 +59,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         
         videoPreviewLayer.videoGravity = .resizeAspectFill
         videoPreviewLayer.connection?.videoOrientation = .portrait
-        cameraView.layer.addSublayer(videoPreviewLayer)
+        cameraView.layer.addSublayer(videoPreviewLayer!)
         
         DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
             self.captureSession.startRunning()

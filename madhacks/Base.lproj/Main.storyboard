@@ -18,19 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DC6-vm-bf8" userLabel="Preview" customClass="PreviewView" customModule="AVCam" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DC6-vm-bf8" userLabel="Preview">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2g-MP-wOY">
-                                <rect key="frame" x="169" y="832" width="76" height="30"/>
+                                <rect key="frame" x="161" y="832" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="Take Photo"/>
+                                <state key="normal" title="TAKE PHOTO"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="fuS-Rj-JID" eventType="touchUpInside" id="eaf-V9-W9l"/>
                                     <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iLh-48-8JL"/>
+                                    <segue destination="VfT-pN-ztl" kind="show" id="Wa0-zL-1oH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-jr-38Q">
+                                <rect key="frame" x="338" y="43" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="MAP"/>
+                                <connections>
+                                    <segue destination="QWF-oc-Qfj" kind="show" id="BYl-9J-UAi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -44,7 +53,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="fuS-Rj-JID" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="113" y="125"/>
+            <point key="canvasLocation" x="-28.985507246376812" y="94.419642857142847"/>
+        </scene>
+        <!--Map Controller-->
+        <scene sceneID="7ad-Y8-BQQ">
+            <objects>
+                <viewController id="QWF-oc-Qfj" customClass="MapController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lVm-cb-Ykc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="mpJ-Y6-MQ8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vU4-lA-Ehz" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="-177"/>
+        </scene>
+        <!--Pin Controller-->
+        <scene sceneID="5wz-Fn-fpH">
+            <objects>
+                <viewController id="VfT-pN-ztl" customClass="PinController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Xh-N1-p8p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="AGq-dc-otF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jX8-5A-i4I" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="516"/>
         </scene>
     </scenes>
 </document>
