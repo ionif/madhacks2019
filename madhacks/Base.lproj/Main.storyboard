@@ -21,23 +21,23 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DC6-vm-bf8" userLabel="Preview">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2g-MP-wOY">
-                                <rect key="frame" x="161" y="832" width="92" height="30"/>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2g-MP-wOY">
+                                <rect key="frame" x="157" y="748" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="TAKE PHOTO"/>
+                                <state key="normal" image="circle-line"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="fuS-Rj-JID" eventType="touchUpInside" id="eaf-V9-W9l"/>
                                     <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iLh-48-8JL"/>
                                     <segue destination="VfT-pN-ztl" kind="show" id="Wa0-zL-1oH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-jr-38Q">
-                                <rect key="frame" x="338" y="43" width="33" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-jr-38Q">
+                                <rect key="frame" x="359" y="44" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="MAP"/>
+                                <state key="normal" image="globe"/>
                                 <connections>
                                     <segue destination="QWF-oc-Qfj" kind="show" id="BYl-9J-UAi"/>
                                 </connections>
@@ -62,13 +62,33 @@
                     <view key="view" contentMode="scaleToFill" id="lVm-cb-Ykc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uIt-kb-e0n">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QWF-oc-Qfj" id="T9d-3p-bfH"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2K-2T-NU9">
+                                <rect key="frame" x="23" y="44" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="oD8-sk-24Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="mpJ-Y6-MQ8"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="uIt-kb-e0n" id="A1S-ZV-HjL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vU4-lA-Ehz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="755" y="-177"/>
+            <point key="canvasLocation" x="753.62318840579712" y="-221.65178571428569"/>
         </scene>
         <!--Pin Controller-->
         <scene sceneID="5wz-Fn-fpH">
@@ -83,7 +103,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jX8-5A-i4I" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="754" y="516"/>
+            <point key="canvasLocation" x="754" y="439"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circle-line" width="400" height="400"/>
+        <image name="globe" width="400" height="400"/>
+    </resources>
 </document>
