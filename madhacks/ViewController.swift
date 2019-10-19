@@ -30,6 +30,10 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         do {
             let input = try AVCaptureDeviceInput(device: backCamera)
             
+            try! backCamera.lockForConfiguration()
+            backCamera.focusMode = .continuousAutoFocus
+            backCamera.unlockForConfiguration()
+            
             stillImageOutput = AVCapturePhotoOutput()
             
             if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
@@ -66,8 +70,12 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     @IBAction func takePhoto(_ sender: Any) {
-        let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-        stillImageOutput.capturePhoto(with: settings, delegate: self)
+        let photoSettings : AVCapturePhotoSettings!
+        photoSettings = AVCapturePhotoSettings.init(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+    photoSettings.isAutoStillImageStabilizationEnabled = true
+        photoSettings.flashMode = .off
+        //capture photo
+        stillImageOutput.capturePhoto(with: photoSettings, delegate: self)
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
