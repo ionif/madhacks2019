@@ -20,6 +20,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>This application requires camera usage.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This application requires location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This application requires location.</string>
 	<key>UILaunchStoryboardName</key>

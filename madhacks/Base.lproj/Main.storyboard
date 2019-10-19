@@ -58,7 +58,7 @@
         <!--Map Controller-->
         <scene sceneID="7ad-Y8-BQQ">
             <objects>
-                <viewController id="QWF-oc-Qfj" customClass="MapController" sceneMemberID="viewController">
+                <viewController id="QWF-oc-Qfj" customClass="MapController" customModule="madhacks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lVm-cb-Ykc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,10 +70,10 @@
                                     <outlet property="delegate" destination="QWF-oc-Qfj" id="T9d-3p-bfH"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2K-2T-NU9">
-                                <rect key="frame" x="23" y="44" width="40" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2K-2T-NU9">
+                                <rect key="frame" x="20" y="44" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="BACK"/>
+                                <state key="normal" image="left"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="oD8-sk-24Y"/>
                                 </connections>
@@ -93,7 +93,7 @@
         <!--Pin Controller-->
         <scene sceneID="5wz-Fn-fpH">
             <objects>
-                <viewController id="VfT-pN-ztl" customClass="PinController" sceneMemberID="viewController">
+                <viewController id="VfT-pN-ztl" customClass="PinController" customModule="madhacks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Xh-N1-p8p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,5 +109,6 @@
     <resources>
         <image name="circle-line" width="400" height="400"/>
         <image name="globe" width="400" height="400"/>
+        <image name="left" width="400" height="400"/>
     </resources>
 </document>

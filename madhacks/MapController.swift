@@ -27,14 +27,6 @@ class MapController : UIViewController {
             locationManager.startUpdatingLocation()
         }
         
-        mapView.delegate = self as! MKMapViewDelegate
-        mapView.mapType = .standard
-        mapView.isZoomEnabled = true
-        mapView.isScrollEnabled = true
-        
-        if let coor = mapView.userLocation.location?.coordinate{
-            mapView.setCenter(coor, animated: true)
-        }
     }
 }
 extension MapController : CLLocationManagerDelegate {
@@ -49,11 +41,7 @@ extension MapController : CLLocationManagerDelegate {
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = locValue
-        annotation.title = "Javed Multani"
-        annotation.subtitle = "current location"
         mapView.addAnnotation(annotation)
-        
-        //centerMap(locValue)
     }
     
 }
