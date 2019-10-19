@@ -18,14 +18,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        // Setup your camera here...
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = .medium
+        
         
         guard let backCamera = AVCaptureDevice.default(for: AVMediaType.video)
             else {
@@ -34,7 +29,7 @@ class ViewController: UIViewController {
         }
         do {
             let input = try AVCaptureDeviceInput(device: backCamera)
-
+            
             stillImageOutput = AVCapturePhotoOutput()
             
             if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
@@ -49,11 +44,16 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Setup your camera here...
+    }
+    
     func setupLivePreview() {
         
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         
-        videoPreviewLayer.videoGravity = .resizeAspect
+        videoPreviewLayer.videoGravity = .resizeAspectFill
         videoPreviewLayer.connection?.videoOrientation = .portrait
         cameraView.layer.addSublayer(videoPreviewLayer)
         
