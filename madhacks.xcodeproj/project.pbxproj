@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22B679AF235BD61000DF09C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22B679AE235BD61000DF09C1 /* GoogleService-Info.plist */; };
+		22B679B2235BD8F600DF09C1 /* PinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B679B0235BD8F600DF09C1 /* PinController.swift */; };
+		22B679B3235BD8F600DF09C1 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B679B1235BD8F600DF09C1 /* MapController.swift */; };
+		5BCE27B7BFA8D063C13D4D01 /* Pods_madhacks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4DFB560F42BC546D3B987A /* Pods_madhacks.framework */; };
 		FA675881235B77D000699FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA675880235B77D000699FD2 /* AppDelegate.swift */; };
 		FA675883235B77D000699FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA675882235B77D000699FD2 /* ViewController.swift */; };
 		FA675886235B77D000699FD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA675884235B77D000699FD2 /* Main.storyboard */; };
@@ -15,6 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22B679AE235BD61000DF09C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22B679B0235BD8F600DF09C1 /* PinController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinController.swift; sourceTree = "<group>"; };
+		22B679B1235BD8F600DF09C1 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		6A0480E79962009F2C77841D /* Pods-madhacks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madhacks.debug.xcconfig"; path = "Target Support Files/Pods-madhacks/Pods-madhacks.debug.xcconfig"; sourceTree = "<group>"; };
+		9B4DFB560F42BC546D3B987A /* Pods_madhacks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_madhacks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D71588104B7F6C88AAAEE8F5 /* Pods-madhacks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madhacks.release.xcconfig"; path = "Target Support Files/Pods-madhacks/Pods-madhacks.release.xcconfig"; sourceTree = "<group>"; };
 		FA67587D235B77D000699FD2 /* madhacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = madhacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA675880235B77D000699FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA675882235B77D000699FD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCE27B7BFA8D063C13D4D01 /* Pods_madhacks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9041F44E755F10167FAF491D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B4DFB560F42BC546D3B987A /* Pods_madhacks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3000568DAD18BE4C9D5BB2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A0480E79962009F2C77841D /* Pods-madhacks.debug.xcconfig */,
+				D71588104B7F6C88AAAEE8F5 /* Pods-madhacks.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA675874235B77D000699FD2 = {
 			isa = PBXGroup;
 			children = (
 				FA67587F235B77D000699FD2 /* madhacks */,
 				FA67587E235B77D000699FD2 /* Products */,
+				F3000568DAD18BE4C9D5BB2E /* Pods */,
+				9041F44E755F10167FAF491D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +87,12 @@
 				FA675880235B77D000699FD2 /* AppDelegate.swift */,
 				FA675882235B77D000699FD2 /* ViewController.swift */,
 				FA675884235B77D000699FD2 /* Main.storyboard */,
+				22B679B1235BD8F600DF09C1 /* MapController.swift */,
+				22B679B0235BD8F600DF09C1 /* PinController.swift */,
 				FA675887235B77D100699FD2 /* Assets.xcassets */,
 				FA675889235B77D100699FD2 /* LaunchScreen.storyboard */,
 				FA67588C235B77D100699FD2 /* Info.plist */,
+				22B679AE235BD61000DF09C1 /* GoogleService-Info.plist */,
 			);
 			path = madhacks;
 			sourceTree = "<group>";
@@ -71,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA67588F235B77D100699FD2 /* Build configuration list for PBXNativeTarget "madhacks" */;
 			buildPhases = (
+				82F6B17DEDCA78DFAE61285E /* [CP] Check Pods Manifest.lock */,
 				FA675879235B77D000699FD2 /* Sources */,
 				FA67587A235B77D000699FD2 /* Frameworks */,
 				FA67587B235B77D000699FD2 /* Resources */,
+				C997CC79FF1318B3944F790A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA67588B235B77D100699FD2 /* LaunchScreen.storyboard in Resources */,
+				22B679AF235BD61000DF09C1 /* GoogleService-Info.plist in Resources */,
 				FA675888235B77D100699FD2 /* Assets.xcassets in Resources */,
 				FA675886235B77D000699FD2 /* Main.storyboard in Resources */,
 			);
@@ -130,11 +166,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		82F6B17DEDCA78DFAE61285E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-madhacks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C997CC79FF1318B3944F790A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-madhacks/Pods-madhacks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-madhacks/Pods-madhacks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-madhacks/Pods-madhacks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA675879235B77D000699FD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B679B3235BD8F600DF09C1 /* MapController.swift in Sources */,
+				22B679B2235BD8F600DF09C1 /* PinController.swift in Sources */,
 				FA675883235B77D000699FD2 /* ViewController.swift in Sources */,
 				FA675881235B77D000699FD2 /* AppDelegate.swift in Sources */,
 			);
@@ -280,16 +360,17 @@
 		};
 		FA675890235B77D100699FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A0480E79962009F2C77841D /* Pods-madhacks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6ZQ2S72G42;
+				DEVELOPMENT_TEAM = 366XH23754;
 				INFOPLIST_FILE = madhacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = alexi.madhacks;
+				PRODUCT_BUNDLE_IDENTIFIER = sgag.madhacks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -298,16 +379,17 @@
 		};
 		FA675891235B77D100699FD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D71588104B7F6C88AAAEE8F5 /* Pods-madhacks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6ZQ2S72G42;
+				DEVELOPMENT_TEAM = 366XH23754;
 				INFOPLIST_FILE = madhacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = alexi.madhacks;
+				PRODUCT_BUNDLE_IDENTIFIER = sgag.madhacks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

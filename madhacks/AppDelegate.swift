@@ -5,7 +5,7 @@
 //  Created by Alex Ionkov on 10/19/19.
 //  Copyright © 2019 Alex Ionkov. All rights reserved.
 //
-
+import Firebase
 import UIKit
 
 @UIApplicationMain
@@ -13,10 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    override init(){
+        FirebaseApp.configure()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
