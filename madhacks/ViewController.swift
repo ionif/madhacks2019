@@ -84,7 +84,8 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             else { return }
         
         let image = UIImage(data: imageData)
-        //captureImageView.image = image
+        print(imageData)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
