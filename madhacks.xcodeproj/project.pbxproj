@@ -15,6 +15,7 @@
 		BED351F1235C3F8400833163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED351EF235C3F8400833163 /* LaunchScreen.storyboard */; };
 		BED351F3235C450600833163 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BED351F2235C450600833163 /* GoogleService-Info.plist */; };
 		BED351F5235C4C1600833163 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = BED351F4235C4C1600833163 /* Images */; };
+		BED351F7235CB07200833163 /* UITextField+InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED351F6235CB07200833163 /* UITextField+InputView.swift */; };
 		FA675881235B77D000699FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA675880235B77D000699FD2 /* AppDelegate.swift */; };
 		FA675883235B77D000699FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA675882235B77D000699FD2 /* ViewController.swift */; };
 		FA675888235B77D100699FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA675887235B77D100699FD2 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		BED351EF235C3F8400833163 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BED351F2235C450600833163 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BED351F4235C4C1600833163 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		BED351F6235CB07200833163 /* UITextField+InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+InputView.swift"; sourceTree = "<group>"; };
 		FA67587D235B77D000699FD2 /* madhacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = madhacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA675880235B77D000699FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA675882235B77D000699FD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				BED351E7235C3EC300833163 /* MapController.swift */,
 				BED351E8235C3EC300833163 /* PinController.swift */,
 				BED351E4235C3E1000833163 /* my_model.mlmodel */,
+				BED351F6235CB07200833163 /* UITextField+InputView.swift */,
 				FA675880235B77D000699FD2 /* AppDelegate.swift */,
 				FA675882235B77D000699FD2 /* ViewController.swift */,
 				BED351EF235C3F8400833163 /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 				FA675881235B77D000699FD2 /* AppDelegate.swift in Sources */,
 				BED351E5235C3E1000833163 /* my_model.mlmodel in Sources */,
 				BED351EB235C3EC300833163 /* PinController.swift in Sources */,
+				BED351F7235CB07200833163 /* UITextField+InputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -120,11 +120,23 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                     fatalError("unexpected result type from VNCoreMLRequest")
             }
             
-            print(request)
-            print(topResult.identifier)
             
-            if(topResult.identifier == "none"){
+            print(results.first.debugDescription.split(separator: " ")[5])
+            
+            let prob = Double(results.first.debugDescription.split(separator: " ")[5])!
+            var classification = topResult.identifier
+            
+            if(prob < 0.5){
+                classification = "none"
+            }
+            
+            if(classification == "none"){
                 // tell the user that there is an exception that the picture taken is not correct
+                let alert = UIAlertController(title: "Error", message: "Furniture cannot be recognized", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                
+                self?.present(alert, animated: true)
                 
             }else{
                 //otherwise let the user know that the pciture taken is acceptable and move on to the next page after the laoding page

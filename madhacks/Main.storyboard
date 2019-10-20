@@ -111,7 +111,7 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ama-WI-K2F">
                                 <rect key="frame" x="187" y="67" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="BACK"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="AW3-if-vDb"/>
@@ -135,11 +135,19 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dataTextField:" destination="VfT-pN-ztl" eventType="editingDidEnd" id="wkT-Xs-WYS"/>
+                                    <action selector="textFieldEditing:" destination="VfT-pN-ztl" eventType="editingDidEnd" id="Ifr-72-mjT"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="AGq-dc-otF"/>
                     </view>
+                    <connections>
+                        <outlet property="dateTextField" destination="fFf-uA-yzF" id="v22-os-6gD"/>
+                        <outlet property="mapView" destination="zN4-hU-Gk9" id="CQ8-Uj-Toq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jX8-5A-i4I" sceneMemberID="firstResponder"/>
             </objects>
