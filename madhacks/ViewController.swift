@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import Vision
+import CoreML
 
 class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
@@ -86,6 +88,40 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         let image = UIImage(data: imageData)
         print(imageData)
         
+        guard let ciImage = CIImage(image: image!) else {
+            fatalError("couldn't convert UIImage to CIImage")
+        }
+        
+        detectScene(image: ciImage)
+        
+    }
+    
+    func detectScene(image: CIImage) {
+        
+        // Load the ML model through its generated class
+        guard let model = try? VNCoreMLModel(for: my_model().model) else {
+            fatalError("can't load Places ML model")
+        }
+        
+        let request = VNCoreMLRequest(model: model) { [weak self] request, error in
+            guard let results = request.results as? [VNClassificationObservation],
+                let topResult = results.first else {
+                    fatalError("unexpected result type from VNCoreMLRequest")
+            }
+            
+            print(request)
+            print(topResult)
+            
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: image)
+        DispatchQueue.global(qos: .userInteractive).async {
+            do {
+                try handler.perform([request])
+            } catch {
+                print(error)
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
