@@ -9,5 +9,6 @@ target 'madhacks' do
   # add the Firebase pod for Google Analytics
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Core'
+	pod 'Firebase/Storage'
 
 end
