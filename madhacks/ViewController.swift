@@ -22,15 +22,11 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     let storage = Storage.storage();
     let db =  Firestore.firestore();
-    var imageNames: [String] = [];
-    var dictionary:  [String: Array] = [:] as! [String : Array<Any>];
     
     override func viewDidLoad() {
         super.viewDidLoad()
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = .medium
-        
-        downloadMarkers()
                 
         guard let backCamera = AVCaptureDevice.default(for: AVMediaType.video)
             else {
@@ -88,6 +84,12 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         stillImageOutput.capturePhoto(with: photoSettings, delegate: self)
     }
     
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         
         print("proccessing Image")
@@ -102,12 +104,13 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             fatalError("couldn't convert UIImage to CIImage")
         }
         
-        detectScene(image: ciImage)
+        detectScene(image: ciImage, images: image!)
+        
+        
         
     }
     
-    func detectScene(image: CIImage) {
-        
+    func detectScene(image: CIImage, images: UIImage){
         // Load the ML model through its generated class
         guard let model = try? VNCoreMLModel(for: my_model().model) else {
             fatalError("can't load Places ML model")
@@ -120,7 +123,21 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             }
             
             print(request)
-            print(topResult)
+            print(topResult.identifier)
+            
+            if(topResult.identifier == "none"){
+                // tell the user that there is an exception that the picture taken is not correct
+                
+            }else{
+                //otherwise let the user know that the pciture taken is acceptable and move on to the next page after the laoding page
+                if let data = images.jpegData(compressionQuality: 0.8) {
+                    let filename = self!.getDocumentsDirectory().appendingPathComponent("image.jpg")
+                    try? data.write(to: filename)
+                }
+                
+                //TO-DO: get the current location of the person and put it as the geo point location here
+                self!.uploadMarkers(verified: true, location: GeoPoint(latitude: 0.0,longitude: 0.0), fileName: "image.jpg")
+            }
             
         }
         
@@ -134,73 +151,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
     }
     
-    func downloadMarkers(){
-        
-        // initialize
-        let group = DispatchGroup()
-        print("starting download........")
-        db.collection("Markers").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                print("starting refrence image download........")
-                for document in querySnapshot!.documents {
-                    group.enter()
-                    
-                    let maingroup = DispatchGroup()
-                    maingroup.enter()
-                    
-                    let docID = document.documentID
-                    let storageRef =  self.storage.reference();
-                    let docData = document.data()
-                    
-                    let imgLoc = docData["Location"] as! GeoPoint
-                    let imgVer = docData["Verified"] as! Bool
-                    
-                    self.dictionary[docID] = [imgLoc,imgVer];
-                    
-                    if(imgVer){
-                        //need to use the geo location and put it on the map
-                        
-                        
-                        // this is downloading the image
-                        let model = storageRef.child(docID + "/image.jpg");
-                        
-                        //this set downloads the image and stores it localy
-                        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-                        let tempDirectory = URL.init(fileURLWithPath: paths, isDirectory: true)
-                        let targetUrl = tempDirectory.appendingPathComponent(docID)
-                        model.write(toFile: targetUrl) { (url, error) in
-                            if error != nil {
-                                print("ERROR: \(error!)")
-                            }else{
-                                print(url!)
-                                self.imageNames.insert(docID.trimmingCharacters(in: .whitespacesAndNewlines), at: 0);
-                                print(self.imageNames)
-                                
-                                
-                                let imageData = try! Data(contentsOf: url!)
-                                
-                                let image = UIImage(data: imageData)
-                                
-                                //do whatever is needed with the image to place on the app
-                                
-                                
-                                print("image " + docID + " downloaded")
-                                print(self.dictionary);
-                                maingroup.leave()
-                                
-                            }
-                        }
-                    }
-                }
-                
-                group.notify(queue: .main) {
-                    print("Finished all requests.")
-                }
-            }
-        }
-    }
     
     func uploadMarkers(verified: Bool, location: GeoPoint, fileName: String){
         
