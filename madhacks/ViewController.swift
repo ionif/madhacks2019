@@ -105,9 +105,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
         
         detectScene(image: ciImage, images: image!)
-        
-        
-        
+    
     }
     
     func detectScene(image: CIImage, images: UIImage){

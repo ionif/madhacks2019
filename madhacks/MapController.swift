@@ -50,10 +50,7 @@ class MapController : UIViewController {
                 print("starting refrence image download........")
                 for document in querySnapshot!.documents {
                     group.enter()
-                    
-                    let maingroup = DispatchGroup()
-                    maingroup.enter()
-                    
+                
                     let docID = document.documentID
                     let storageRef =  self.storage.reference();
                     let docData = document.data()
@@ -87,7 +84,7 @@ class MapController : UIViewController {
                                 
                                 print("image " + docID + " downloaded")
                                 print(self.dictionary);
-                                maingroup.leave()
+                                group.leave()
                                 
                             }
                         }
@@ -96,6 +93,8 @@ class MapController : UIViewController {
                 
                 group.notify(queue: .main) {
                     print("Finished all requests.")
+                    //use this for any aysynchronis tasks that may occur
+                    
                 }
             }
         }
