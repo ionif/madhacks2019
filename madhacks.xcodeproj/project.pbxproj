@@ -3,26 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15049D8D147E73DBFE9A3218 /* Pods_madhacks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371725C3C68120B7F0A729D8 /* Pods_madhacks.framework */; };
 		BED351E5235C3E1000833163 /* my_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BED351E4235C3E1000833163 /* my_model.mlmodel */; };
 		BED351EA235C3EC300833163 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED351E7235C3EC300833163 /* MapController.swift */; };
 		BED351EB235C3EC300833163 /* PinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED351E8235C3EC300833163 /* PinController.swift */; };
 		BED351F0235C3F8400833163 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED351EE235C3F8400833163 /* Main.storyboard */; };
 		BED351F1235C3F8400833163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED351EF235C3F8400833163 /* LaunchScreen.storyboard */; };
+		BED351F3235C450600833163 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BED351F2235C450600833163 /* GoogleService-Info.plist */; };
+		BED351F5235C4C1600833163 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = BED351F4235C4C1600833163 /* Images */; };
 		FA675881235B77D000699FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA675880235B77D000699FD2 /* AppDelegate.swift */; };
 		FA675883235B77D000699FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA675882235B77D000699FD2 /* ViewController.swift */; };
 		FA675888235B77D100699FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA675887235B77D100699FD2 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		371725C3C68120B7F0A729D8 /* Pods_madhacks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_madhacks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		834F9630079B359C76B92879 /* Pods-madhacks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madhacks.debug.xcconfig"; path = "Target Support Files/Pods-madhacks/Pods-madhacks.debug.xcconfig"; sourceTree = "<group>"; };
+		9E3D242515A084F85E2A5A9F /* Pods-madhacks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madhacks.release.xcconfig"; path = "Target Support Files/Pods-madhacks/Pods-madhacks.release.xcconfig"; sourceTree = "<group>"; };
 		BED351E4235C3E1000833163 /* my_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = my_model.mlmodel; path = ../../my_model.mlmodel; sourceTree = "<group>"; };
 		BED351E7235C3EC300833163 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		BED351E8235C3EC300833163 /* PinController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinController.swift; sourceTree = "<group>"; };
 		BED351EE235C3F8400833163 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BED351EF235C3F8400833163 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BED351F2235C450600833163 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BED351F4235C4C1600833163 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		FA67587D235B77D000699FD2 /* madhacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = madhacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA675880235B77D000699FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA675882235B77D000699FD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15049D8D147E73DBFE9A3218 /* Pods_madhacks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		556833177D849D3B524ECA46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				371725C3C68120B7F0A729D8 /* Pods_madhacks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F7DFAC8BEB177CD9824150B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				834F9630079B359C76B92879 /* Pods-madhacks.debug.xcconfig */,
+				9E3D242515A084F85E2A5A9F /* Pods-madhacks.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA675874235B77D000699FD2 = {
 			isa = PBXGroup;
 			children = (
 				FA67587F235B77D000699FD2 /* madhacks */,
 				FA67587E235B77D000699FD2 /* Products */,
+				6F7DFAC8BEB177CD9824150B /* Pods */,
+				556833177D849D3B524ECA46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +88,8 @@
 		FA67587F235B77D000699FD2 /* madhacks */ = {
 			isa = PBXGroup;
 			children = (
+				BED351F4235C4C1600833163 /* Images */,
+				BED351F2235C450600833163 /* GoogleService-Info.plist */,
 				BED351E7235C3EC300833163 /* MapController.swift */,
 				BED351E8235C3EC300833163 /* PinController.swift */,
 				BED351E4235C3E1000833163 /* my_model.mlmodel */,
@@ -80,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA67588F235B77D100699FD2 /* Build configuration list for PBXNativeTarget "madhacks" */;
 			buildPhases = (
+				BB7F756E6F10E42CECB7682C /* [CP] Check Pods Manifest.lock */,
 				FA675879235B77D000699FD2 /* Sources */,
 				FA67587A235B77D000699FD2 /* Frameworks */,
 				FA67587B235B77D000699FD2 /* Resources */,
+				27BF3A9D0845EA2BA297AA2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,13 +163,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED351F5235C4C1600833163 /* Images in Resources */,
 				BED351F1235C3F8400833163 /* LaunchScreen.storyboard in Resources */,
+				BED351F3235C450600833163 /* GoogleService-Info.plist in Resources */,
 				FA675888235B77D100699FD2 /* Assets.xcassets in Resources */,
 				BED351F0235C3F8400833163 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27BF3A9D0845EA2BA297AA2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-madhacks/Pods-madhacks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-madhacks/Pods-madhacks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-madhacks/Pods-madhacks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB7F756E6F10E42CECB7682C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-madhacks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA675879235B77D000699FD2 /* Sources */ = {
@@ -273,6 +349,7 @@
 		};
 		FA675890235B77D100699FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 834F9630079B359C76B92879 /* Pods-madhacks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +368,7 @@
 		};
 		FA675891235B77D100699FD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E3D242515A084F85E2A5A9F /* Pods-madhacks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
